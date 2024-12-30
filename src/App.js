@@ -8,6 +8,7 @@ import {
   incrementByAmount,
 } from "./features/counter/counterSlice";
 import { useState } from "react";
+import { Button, TextField } from "@mui/material";
 
 function App() {
   const [amount, setAmount] = useState(0);
@@ -35,20 +36,27 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>Hello, Redux Toolkit!</p>
-        <button onClick={handleIncrementClick}>+</button>
+        <Button variant="outlined" onClick={handleIncrementClick}>
+          +
+        </Button>
         <p>Count: {count}</p>
-        <button onClick={handleDecrementClick}>-</button>
-        <button onClick={handleResetClick}>Reset</button>
+        <Button varient="outlined" onClick={handleDecrementClick}>
+          -
+        </Button>
+        <Button varient="outlined" onClick={handleResetClick}>
+          Reset
+        </Button>
         <br />
-        <input
+        <TextField
+          variant="standard"
           type="Number"
           value={amount}
-          placeholder="Enter the amount"
+          label="Amount to increment by"
           onChange={(e) => setAmount(e.target.value)}
         />
-        <button onClick={handleincrementByAmountClick}>
+        <Button varient="outlined" onClick={handleincrementByAmountClick}>
           Increment by Amount
-        </button>
+        </Button>
       </header>
     </div>
   );
